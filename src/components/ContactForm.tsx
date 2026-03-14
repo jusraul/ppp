@@ -12,7 +12,17 @@ export default function ContactForm() {
 
       <form
         className="space-y-6"
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={(e) => {
+          e.preventDefault();
+          const form = e.currentTarget;
+          const name = (form.querySelector('#contact-name') as HTMLInputElement).value;
+          const email = (form.querySelector('#contact-email') as HTMLInputElement).value;
+          const subjectVal = (form.querySelector('#contact-subject') as HTMLInputElement).value || 'Contact Inquiry';
+          const message = (form.querySelector('#contact-message') as HTMLTextAreaElement).value;
+          const subject = encodeURIComponent(subjectVal);
+          const body = encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`);
+          window.location.href = `mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=${subject}&body=${body}`;
+        }}
       >
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
