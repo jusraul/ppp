@@ -100,7 +100,7 @@ export default function HomePage() {
   return (
     <>
       {/* ——— HERO ——— */}
-      <section className="relative min-h-[90vh] pt-10 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[90vh] pt-24 flex items-center justify-center overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80"
           alt="Coastal estuary along Florida's Nature Coast"

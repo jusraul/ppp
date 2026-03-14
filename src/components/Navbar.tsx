@@ -114,11 +114,18 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 top-[60px] z-40 bg-black/20 lg:hidden"
+          onClick={() => setMobileOpen(false)}
+          aria-hidden="true"
+        />
+      )}
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-0 top-[60px] z-40 bg-white transition-transform duration-300 lg:hidden",
-          mobileOpen ? "translate-x-0" : "translate-x-full"
+          "fixed top-[60px] right-0 bottom-0 z-50 w-full bg-white transition-transform duration-300 lg:hidden overflow-y-auto",
+          mobileOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"
         )}
         aria-hidden={!mobileOpen}
       >
