@@ -4,7 +4,18 @@ export default function VolunteerForm() {
   return (
     <form
       className="space-y-6 rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={(e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const firstName = (form.querySelector('#vol-first') as HTMLInputElement).value;
+        const lastName = (form.querySelector('#vol-last') as HTMLInputElement).value;
+        const email = (form.querySelector('#vol-email') as HTMLInputElement).value;
+        const interest = (form.querySelector('#vol-interest') as HTMLSelectElement).value;
+        const message = (form.querySelector('#vol-message') as HTMLTextAreaElement).value;
+        const subject = encodeURIComponent(`Volunteer Sign Up - ${firstName} ${lastName}`);
+        const body = encodeURIComponent(`Name: ${firstName} ${lastName}\nEmail: ${email}\nInterested in: ${interest}\n\n${message}`);
+        window.location.href = `mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=${subject}&body=${body}`;
+      }}
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div>

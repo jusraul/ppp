@@ -81,12 +81,12 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="/get-involved"
+          <a
+            href="mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=Volunteer%20Inquiry"
             className="rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary hover:bg-emerald-50 transition-colors"
           >
             Volunteer Today
-          </Link>
+          </a>
           <a
             href="https://www.paypal.com/donate/?hosted_button_id=AMAVN94VGL682"
             target="_blank"
@@ -114,18 +114,11 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Drawer */}
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 top-[60px] z-40 bg-black/20 lg:hidden"
-          onClick={() => setMobileOpen(false)}
-          aria-hidden="true"
-        />
-      )}
       <div
         id="mobile-menu"
         className={cn(
-          "fixed top-[60px] right-0 bottom-0 z-50 w-full bg-white transition-transform duration-300 lg:hidden overflow-y-auto",
-          mobileOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"
+          "fixed inset-0 top-[60px] z-40 bg-white transition-transform duration-300 lg:hidden",
+          mobileOpen ? "translate-x-0" : "translate-x-full"
         )}
         aria-hidden={!mobileOpen}
       >
@@ -141,18 +134,18 @@ export default function Navbar() {
             </Link>
           ))}
           <hr className="my-4 border-slate-200" />
-          <Link
-            href="/get-involved"
-            className="rounded-lg border border-primary px-4 py-3 text-center font-semibold text-primary hover:bg-emerald-50 transition-colors"
+          <a
+            href="mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=Volunteer%20Inquiry"
+            className="rounded-lg bg-emerald-600 px-4 py-3 text-center font-semibold text-white hover:bg-emerald-700 transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Volunteer Today
-          </Link>
+          </a>
           <a
             href="https://www.paypal.com/donate/?hosted_button_id=AMAVN94VGL682"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg bg-accent px-4 py-3 text-center font-semibold text-white hover:bg-teal-700 transition-colors"
+            className="rounded-lg bg-teal-600 px-4 py-3 text-center font-semibold text-white hover:bg-teal-700 transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Donate Now
