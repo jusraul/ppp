@@ -155,13 +155,40 @@ export default function HomePage() {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center"
           >
-            <PrimaryButton href="/get-involved" size="lg">
+            <PrimaryButton href="mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=Join%20a%20Cleanup" size="lg">
               Join a Cleanup
             </PrimaryButton>
-            <PrimaryButton href="/about" variant="outline" size="lg">
+            <PrimaryButton href="mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=Learn%20More" variant="outline" size="lg">
               Learn More
             </PrimaryButton>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ——— 2028 BALLOT ——— */}
+      <section className="relative py-16 bg-emerald-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.05),transparent_70%)]" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <span className="inline-block rounded-full bg-amber-500/20 px-4 py-1.5 text-sm font-semibold text-amber-300 mb-4">
+            2028 Ballot Initiative
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mb-4">
+            Fighting to Preserve the Nature Coast — Forever
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-white/80 mb-8">
+            We&apos;re working to place permanent conservation protections for
+            Florida&apos;s Nature Coast on the 2028 ballot. Our estuaries,
+            rivers, and shorelines deserve lasting safeguards — and your
+            voice makes it possible.
+          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <PrimaryButton href="mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=Get%20Involved" size="lg">
+              Get Involved
+            </PrimaryButton>
+            <PrimaryButton href="mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=Learn%20More" variant="outline" size="lg">
+              Learn More
+            </PrimaryButton>
+          </div>
         </div>
       </section>
 
@@ -299,10 +326,10 @@ export default function HomePage() {
             the word — every action helps protect Florida&apos;s Nature Coast.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <PrimaryButton href="/get-involved" size="lg">
+            <PrimaryButton href="mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=Get%20Involved" size="lg">
               Get Involved
             </PrimaryButton>
-            <PrimaryButton href="/contact" variant="outline" size="lg">
+            <PrimaryButton href="mailto:lowerwithlacoocheeriverkeeper@gmail.com?subject=Contact%20Us" variant="outline" size="lg">
               Contact Us
             </PrimaryButton>
           </div>

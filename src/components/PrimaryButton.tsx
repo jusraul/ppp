@@ -17,18 +17,25 @@ export default function PrimaryButton({
   size = "default",
   className,
 }: PrimaryButtonProps) {
+  const classes = cn(
+    "inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-200",
+    size === "lg" ? "px-8 py-3.5 text-base" : "px-6 py-2.5 text-sm",
+    variant === "filled"
+      ? "bg-cta text-white hover:bg-emerald-700 shadow-sm hover:shadow-md"
+      : "border-2 border-white text-white hover:bg-white/10",
+    className
+  );
+
+  if (href.startsWith("mailto:") || href.startsWith("http")) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={cn(
-        "inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-200",
-        size === "lg" ? "px-8 py-3.5 text-base" : "px-6 py-2.5 text-sm",
-        variant === "filled"
-          ? "bg-cta text-white hover:bg-emerald-700 shadow-sm hover:shadow-md"
-          : "border-2 border-white text-white hover:bg-white/10",
-        className
-      )}
-    >
+    <Link href={href} className={classes}>
       {children}
     </Link>
   );
